@@ -32,7 +32,7 @@ module Restaurant
     private
 
     def require_valid_id
-      head 404 unless Moped::BSON::ObjectId.legal?(params[:id])
+      head 404 unless BSON::ObjectId.legal?(params[:id])
     end
 
     def require_resource
@@ -88,9 +88,9 @@ module Restaurant
     def resource_id
       @resource_id ||= begin
         if params[:id]
-          Moped::BSON::ObjectId.from_string(params[:id])
+          BSON::ObjectId.from_string(params[:id]).to_s
         else
-          Moped::BSON::ObjectId.new
+          BSON::ObjectId.new.to_s
         end
       end
     end

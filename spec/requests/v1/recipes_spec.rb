@@ -20,7 +20,7 @@ describe "/v1/recipes" do
   end
 
   let(:non_existent_id) do
-    Moped::BSON::ObjectId.new
+    BSON::ObjectId.new
   end
 
   describe "GET /v1/recipes" do

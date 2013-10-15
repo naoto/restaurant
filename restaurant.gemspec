@@ -14,9 +14,15 @@ Gem::Specification.new do |gem|
 
   gem.files = Dir["{app,config,db,lib}/**/*"] + ["MIT-LICENSE", "Rakefile", "README.md"]
 
+  gem.add_dependency "bson"
+  gem.add_dependency "bson_ext"
   gem.add_dependency "mongoid"
+  gem.add_dependency "protected_attributes"
+  gem.add_dependency 'rails-observers'
+  gem.add_dependency 'actionpack-page_caching'
+  gem.add_dependency 'actionpack-action_caching'
   gem.add_development_dependency "doorkeeper"
-  gem.add_development_dependency "rails", "~> 3.2.13"
+  gem.add_development_dependency "rails", ">= 4.0.0"
   gem.add_development_dependency "sqlite3"
   gem.add_development_dependency "rspec-rails", ">= 2.13.0"
   gem.add_development_dependency "rspec-json_matcher"

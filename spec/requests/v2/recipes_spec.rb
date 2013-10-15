@@ -31,7 +31,7 @@ describe "/v2/recipes" do
   end
 
   let(:non_existent_id) do
-    Moped::BSON::ObjectId.new
+    BSON::ObjectId.new
   end
 
   describe "POST /v2/recipes" do
