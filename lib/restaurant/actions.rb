@@ -1,11 +1,11 @@
 module Restaurant
   module Actions
     def self.included(base)
-      base.before_filter :require_valid_id, :require_resource, :only => [:show, :update, :destroy]
-      base.before_filter :add_created_at, :only => :create
-      base.before_filter :add_updated_at, :only => :update
-      base.after_filter :expire_resource_cache, :only => [:update, :destroy]
-      base.after_filter :update_resources_version_cache, :only => [:create, :update, :destroy]
+      base.before_action :require_valid_id, :require_resource, :only => [:show, :update, :destroy]
+      base.before_action :add_created_at, :only => :create
+      base.before_action :add_updated_at, :only => :update
+      base.after_action :expire_resource_cache, :only => [:update, :destroy]
+      base.after_action :update_resources_version_cache, :only => [:create, :update, :destroy]
     end
 
     def index
