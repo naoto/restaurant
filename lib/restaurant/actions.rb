@@ -1,5 +1,8 @@
 module Restaurant
   module Actions
+
+    respond_to :json
+
     def self.included(base)
       base.before_action :require_valid_id, :require_resource, :only => [:show, :update, :destroy]
       base.before_action :add_created_at, :only => :create
